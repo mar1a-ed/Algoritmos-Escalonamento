@@ -7,6 +7,7 @@ public class Algoritmo {
     protected Integer inicio;
     protected Integer duracao;
     protected Integer prioridade;
+    protected Integer tempoFaltante;
 
     Scanner sc = new Scanner(System.in);
     
@@ -44,6 +45,14 @@ public class Algoritmo {
     public void setPrioridade(Integer prioridade) {
         this.prioridade = prioridade;
     }
+
+    public Integer getTempoFaltante() {
+        return tempoFaltante;
+    }
+
+    public void setTempoFaltante(Integer tempoFaltante) {
+        this.tempoFaltante = tempoFaltante;
+    }   
     
     public void ordenaTarefas(Algoritmo[] tarefas){
         Algoritmo temp; //objeto auxiliar para fazer a troca

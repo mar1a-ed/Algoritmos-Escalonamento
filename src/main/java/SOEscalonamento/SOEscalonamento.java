@@ -18,22 +18,35 @@ public class SOEscalonamento {
         System.out.println("[r] - Round Robin Com Prioridade Quantum = 2.");
         char opcao = sc.next().charAt(0);        
         
-        if(opcao=='p'){
-            for(int i=0;i<qtd;i++){
-                PP pp = new PP(); //objeto do algoritmo 'Por Prioridade Sem Preempção'
-                pp.addTarefa(i); //adiciona a tarefa no vetor
-                tarefas[i] = pp; //instacia o objeto para o vetor original
+        switch (opcao) {
+            case 'p' -> {
+                for(int i=0;i<qtd;i++){
+                    PP pp = new PP(); //objeto do algoritmo 'Por Prioridade Sem Preempção'
+                    pp.addTarefa(i); //adiciona a tarefa no vetor
+                    tarefas[i] = pp; //instacia o objeto para o vetor original
+                }   
+                System.out.println("\n--------------PP----------------");
+                System.out.println(" #T | I | F");
+                System.out.println("-----------------------------");
+                PP roda = new PP();
+                roda.execucao(tarefas); //executa o algoritmo
+                break;
             }
-            
-            
-            System.out.println("\n-------------PP--------------");
-            System.out.println(" #T | I | F");
-            System.out.println("-----------------------------");
-            PP roda = new PP();
-            roda.execucao(tarefas); //executa o algoritmo
-        
-        
+            case 'r' -> {
+                for(int i=0;i<qtd;i++){
+                    RR rr = new RR();
+                    rr.addTarefa(i);
+                    tarefas[i] = rr;
+                }
+                System.out.println("\n--------------RR---------------");
+                RR roda = new RR();
+                roda.execucao(tarefas);
+                break;
+            }
+            default -> System.out.println("Opção Inválida!");
         }
+        
+        sc.close();
         
     }
     

@@ -5,7 +5,7 @@ public class PP extends Algoritmo{
     public void addTarefa(int qtd){
      
         //informa os dados necessários de cada tarefa
-        System.out.printf("Tarefa - Informe: \n");
+        System.out.printf("Tarefa - Informe:");
         System.out.print("Id: ");
         id = sc.nextInt();
         System.out.print("Início: ");
