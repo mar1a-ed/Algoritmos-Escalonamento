@@ -46,12 +46,16 @@ public class Algoritmo {
     }
     
     public void ordenaTarefas(Algoritmo[] tarefas){
-        Algoritmo temp;
+        Algoritmo temp; //objeto auxiliar para fazer a troca
          
-        for(int i=0;i<tarefas.length-1;i++){
-            for(int j=i+1;j<tarefas.length;j++){
-                if(tarefas[j].getPrioridade()>tarefas[i].getPrioridade()){
-                    temp = tarefas[i];
+        /* foi utilizado o método de ordenação 'Bubble Sort' para ordenar as tarefas
+        conforme a prioridade (foi usado o critério de quanto maior o número da prioridade, maior a prioridade)*/
+        
+        for(int i=0;i<tarefas.length-1;i++){ //percorre o vetor 
+            for(int j=i+1;j<tarefas.length;j++){ //percorre o vetor a partir da posição posterior à inicial
+                if(tarefas[j].getPrioridade()>tarefas[i].getPrioridade()){ //verifica se a prioridade da posição posterior, é maior que a prioridade da posição anteriro
+                    //realiza a troca, se necessário
+                    temp = tarefas[i]; 
                     tarefas[i] = tarefas[j];
                     tarefas[j] = temp;
                 }
